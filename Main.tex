@@ -1,20 +1,28 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2018-07-08 21:35:51>
+%% Time-stamp: <Chen Wang: 2018-07-08 23:45:05>
 
 \documentclass[zihao=-4]{ctexbook}
 \ctexset{
   chapter = {
+    name = {第,卷},
     format = \Large\bfseries\heiti,
     beforeskip = 10pt,
     afterskip = 20pt,
     titleformat = \chaptertitleformat
   },
   section = {
-    name = {第,节},
+    name = {第,章},
     number = \chinese{section},
-    format = \large\heiti\centering,
+    format = \large\heiti,
     afterskip = 10pt,
     beforeskip = 10pt,
+  },
+  subsection = {
+    name = {第,节},
+    number = \chinese{subsection},
+    format = \heiti,
+    afterskip = 0pt,
+    beforeskip = 0pt,
   }
 }
 
@@ -116,29 +124,31 @@
 %   \tikz[baseline=(char.base)]\node[shape=circle,draw,inner sep=0.2pt,font=\tiny,minimum size=8pt] (char) {#1};}
 % \renewcommand\thefootnote{\protect\circled{\arabic{footnote}}}
 
-% \usepackage{pifont}
-% \makeatletter
-% \newcommand*{\circnum}[1]{%
-%   \expandafter\@circnum\csname c@#1\endcsname
-% }
-% \newcommand*{\@circnum}[1]{%
-%   \ifnum#1<1 %
-%   \@ctrerr
-%   \else
-%   \ifnum#1>20 %
-%   \@ctrerr
-%   \else
-%   \ding{\numexpr 181+(#1)\relax}%
-%   \fi
-%   \fi
-% }
-% \makeatother
+\usepackage{pifont}
+\makeatletter
+\newcommand*{\circnum}[1]{%
+  \expandafter\@circnum\csname c@#1\endcsname
+}
+\newcommand*{\@circnum}[1]{%
+  \ifnum#1<1 %
+  \@ctrerr
+  \else
+  \ifnum#1>20 %
+  \@ctrerr
+  \else
+  \ding{\the\numexpr 181+(#1)\relax}%
+  \fi
+  \fi
+}
+\makeatother
 
-% \renewcommand*{\thefootnote}{\circnum{footnote}}
+\renewcommand*{\thefootnote}{\circnum{footnote}}
+\setlength{\footskip}{0pt} 
+\setlength{\footnotesep}{0pt}
 
-\usepackage{footnote}
-\makesavenoteenv{tabular}
-\makesavenoteenv{table}
+% \usepackage{footnote}
+% \makesavenoteenv{tabular}
+% \makesavenoteenv{table}
 
 %% title & author
 \title{\huge 历\quad{}代\quad{}年\quad{}表}
@@ -153,8 +163,8 @@
 
 \setcounter{page}{1}
 
-\input{chp0}
-\input{chp1}
+\input{QianYan/qianyan}
+\input{ZhanGuo/Qin/yingzheng}
 % \input{chp2}
 % \input{chp3}
 % \input{chp4}
