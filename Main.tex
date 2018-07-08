@@ -1,0 +1,168 @@
+%% -*- coding: utf-8 -*-
+%% Time-stamp: <Chen Wang: 2018-07-08 21:35:51>
+
+\documentclass[zihao=-4]{ctexbook}
+\ctexset{
+  chapter = {
+    format = \Large\bfseries\heiti,
+    beforeskip = 10pt,
+    afterskip = 20pt,
+    titleformat = \chaptertitleformat
+  },
+  section = {
+    name = {第,节},
+    number = \chinese{section},
+    format = \large\heiti\centering,
+    afterskip = 10pt,
+    beforeskip = 10pt,
+  }
+}
+
+\usepackage{varwidth}
+\newcommand{\chaptertitleformat}[1]{%%
+  \begin{varwidth}[t]{.7\linewidth}#1\end{varwidth}}
+
+% Some extra packages
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  escapeinside={||},
+  mathescape=true
+}
+
+\usepackage{fancyvrb}
+\newsavebox{\FVerbBox}
+\newenvironment{FVerbatim}
+{\VerbatimEnvironment
+  \begin{center}
+\begin{BVerbatim}[commandchars=\\\{\}]}
+ {\end{BVerbatim}
+   \end{center}}
+
+\usepackage{color}
+\usepackage[perpage,hang,flushmargin]{footmisc}
+
+\usepackage[hidelinks]{hyperref}
+% \hypersetup{
+%   colorlinks,
+%   citecolor=black,
+%   filecolor=black,
+%   linkcolor=black,
+%   urlcolor=black
+% }
+
+% For Meizu Pro5
+\usepackage[
+    % showframe,
+    paperwidth=2.75in,
+    paperheight=4.9in,
+    left=0.1in,
+    right=0.1in,
+    top=0.1in,
+    bottom=0.18in,
+    footskip=10pt
+]
+{geometry}
+
+% For Kindle 6"
+% \usepackage[
+% % showframe,
+% paperwidth=3.6in,
+% paperheight=4.8in,
+% left=0.1in,
+% right=0.1in,
+% top=0.1in,
+% bottom=0.18in,
+% % footskip=10pt
+% ]
+% {geometry}
+
+\setCJKmainfont{FZLanTingSong}
+
+\newCJKfontfamily[fzsong]\fzsong{FZLanTingSong}
+\newCJKfontfamily[kaiti]\kaiti{KaiTi}
+\newCJKfontfamily[hkxm]\hkxm{FZBeiWeiKaiShu-S19_GB18030}
+\newCJKfontfamily[song]\pml{PMingLiU}
+\newCJKfontfamily[song]\hnm{HanaMin}
+\newCJKfontfamily[fzk]\fzk{FZKaiS-Extended(SIP)}
+\newCJKfontfamily[HeiTi]\SimHei{SimHei}
+
+
+\usepackage{booktabs}
+\usepackage{array}
+
+\usepackage{enumitem}
+% \setlength{\parindent}{0pt}
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+\setlist[enumerate]{
+  nosep,
+  itemsep=0pt,
+  parsep=0pt,
+  topsep=3pt,
+  partopsep=0pt,
+  leftmargin=0.8em,
+  after=\vspace{-3.2em},
+  before=\vspace{-1.6em},  
+  }
+
+\usepackage{longtable}
+
+%% 改变页数字体大小
+\renewcommand*{\thepage}{\scriptsize\arabic{page}}
+%% 改变footnote字体大小
+\renewcommand{\footnotesize}{\fontsize{5pt}{6pt}\selectfont}
+
+% \newcommand*\circled[1]{%
+%   \tikz[baseline=(char.base)]\node[shape=circle,draw,inner sep=0.2pt,font=\tiny,minimum size=8pt] (char) {#1};}
+% \renewcommand\thefootnote{\protect\circled{\arabic{footnote}}}
+
+% \usepackage{pifont}
+% \makeatletter
+% \newcommand*{\circnum}[1]{%
+%   \expandafter\@circnum\csname c@#1\endcsname
+% }
+% \newcommand*{\@circnum}[1]{%
+%   \ifnum#1<1 %
+%   \@ctrerr
+%   \else
+%   \ifnum#1>20 %
+%   \@ctrerr
+%   \else
+%   \ding{\numexpr 181+(#1)\relax}%
+%   \fi
+%   \fi
+% }
+% \makeatother
+
+% \renewcommand*{\thefootnote}{\circnum{footnote}}
+
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
+%% title & author
+\title{\huge 历\quad{}代\quad{}年\quad{}表}
+\author{}
+\date{}
+
+\begin{document}
+\clearpage\maketitle
+\clearpage\tableofcontents
+
+\thispagestyle{empty}
+
+\setcounter{page}{1}
+
+\input{chp0}
+\input{chp1}
+% \input{chp2}
+% \input{chp3}
+% \input{chp4}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-engine: xetex
+%%% TeX-master: t
+%%% End:
