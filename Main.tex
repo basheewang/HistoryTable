@@ -1,5 +1,5 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2018-07-10 01:37:37>
+%% Time-stamp: <Chen Wang: 2018-07-10 02:22:31>
 
 \documentclass[zihao=-4]{ctexbook}
 \ctexset{
@@ -107,7 +107,8 @@
   parsep=0pt,
   topsep=3pt,
   partopsep=0pt,
-  leftmargin=0.8em,
+  leftmargin=0.4em,
+  labelsep=2pt,
   after=\vspace{-3.2em},
   before=\vspace{-1.6em},  
   }
@@ -124,10 +125,10 @@
 %% 使每页的脚注的数字为黑色圆圈数字
 \usepackage{pifont}
 \makeatletter
-\newcommand*{\circnum}[1]{%
-  \expandafter\@circnum\csname c@#1\endcsname
+\newcommand*{\bcircnum}[1]{%
+  \expandafter\@bcircnum\csname c@#1\endcsname
 }
-\newcommand*{\@circnum}[1]{%
+\newcommand*{\@bcircnum}[1]{%
   \ifnum#1<1 %
   \@ctrerr
   \else
@@ -140,7 +141,27 @@
 }
 \makeatother
 
-\renewcommand*{\thefootnote}{\circnum{footnote}}
+\renewcommand*{\thefootnote}{\bcircnum{footnote}}
+
+% \makeatletter
+% \newcommand*{\circnum}[1]{%
+%   \expandafter\@circnum\csname c@#1\endcsname
+% }
+% \newcommand*{\@circnum}[1]{%
+%   \ifnum#1<1 %
+%   \@ctrerr
+%   \else
+%   \ifnum#1>10 %
+%   \@ctrerr
+%   \else
+%   \ding{\the\numexpr 171+(#1)\relax}%
+%   \fi
+%   \fi
+% }
+% \makeatother
+
+% \renewcommand*{\theenumi}{\circnum{enumi}}
+
 \setlength{\footskip}{0pt} 
 \setlength{\footnotesep}{0pt}
 
