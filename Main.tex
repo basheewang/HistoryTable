@@ -1,11 +1,11 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2018-07-08 23:45:05>
+%% Time-stamp: <Chen Wang: 2018-07-10 00:58:17>
 
 \documentclass[zihao=-4]{ctexbook}
 \ctexset{
   chapter = {
     name = {第,卷},
-    format = \Large\bfseries\heiti,
+    format = \centering\Large\bfseries\heiti,
     beforeskip = 10pt,
     afterskip = 20pt,
     titleformat = \chaptertitleformat
@@ -13,7 +13,7 @@
   section = {
     name = {第,章},
     number = \chinese{section},
-    format = \large\heiti,
+    format = \newpage\large\heiti,
     afterskip = 10pt,
     beforeskip = 10pt,
   },
@@ -95,7 +95,6 @@
 \newCJKfontfamily[fzk]\fzk{FZKaiS-Extended(SIP)}
 \newCJKfontfamily[HeiTi]\SimHei{SimHei}
 
-
 \usepackage{booktabs}
 \usepackage{array}
 
@@ -117,13 +116,12 @@
 
 %% 改变页数字体大小
 \renewcommand*{\thepage}{\scriptsize\arabic{page}}
-%% 改变footnote字体大小
+
+%% 改变字体大小
 \renewcommand{\footnotesize}{\fontsize{5pt}{6pt}\selectfont}
+\renewcommand{\threept}{\fontsize{3pt}{3pt}\selectfont}
 
-% \newcommand*\circled[1]{%
-%   \tikz[baseline=(char.base)]\node[shape=circle,draw,inner sep=0.2pt,font=\tiny,minimum size=8pt] (char) {#1};}
-% \renewcommand\thefootnote{\protect\circled{\arabic{footnote}}}
-
+%% 使每页的脚注的数字为黑色圆圈数字
 \usepackage{pifont}
 \makeatletter
 \newcommand*{\circnum}[1]{%
@@ -163,11 +161,10 @@
 
 \setcounter{page}{1}
 
-\input{QianYan/qianyan}
-\input{ZhanGuo/Qin/yingzheng}
-% \input{chp2}
-% \input{chp3}
-% \input{chp4}
+\input{QianYan/QianYan}
+\input{ZhanGuo/ZhanGuo}
+\input{Qin/00_Qin}
+\input{Han/00_Han}
 
 \end{document}
 
