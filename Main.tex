@@ -1,5 +1,5 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2018-07-10 09:11:18>
+%% Time-stamp: <Chen Wang: 2018-07-10 17:34:47>
 
 \documentclass[zihao=-4]{ctexbook}
 \ctexset{
@@ -59,9 +59,20 @@
 %   urlcolor=black
 % }
 
+\usepackage{fancyhdr}
+\fancyhf{} % clear all header and footers
+% \renewcommand{\headrulewidth}{0pt} % remove the header rule
+% \rfoot{\thepage}
+% \pagestyle{fancy}
+% \fancyhf{}% clearsall
+% \fancyhead[RE,LO]{\normalsize foo}
+% \rfoot{\thepage}
+% \renewcommand{\footrulewidth}{-30pt}
+
 % For Meizu Pro5
 \usepackage[
     % showframe,
+    % includefoot,
     paperwidth=2.75in,
     paperheight=4.9in,
     left=0.1in,
@@ -180,10 +191,13 @@
 \begin{document}
 \clearpage\maketitle
 \clearpage\tableofcontents
+% \thispagestyle{empty}
 
 \thispagestyle{empty}
 
 \setcounter{page}{1}
+
+\addtocontents{toc}{\protect\thispagestyle{empty}}
 
 \input{QianYan/QianYan}
 \input{ZhanGuo/ZhanGuo}
