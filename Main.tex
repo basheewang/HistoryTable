@@ -1,5 +1,5 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2018-07-10 19:30:40>
+%% Time-stamp: <Chen Wang: 2018-07-10 20:41:47>
 
 \documentclass[zihao=-4]{ctexbook}
 \ctexset{
@@ -23,8 +23,17 @@
     format = \heiti,
     afterskip = 0pt,
     beforeskip = 0pt,
+  },
+  subsubsection = {
+    % name = {第,},
+    % numbering = true,
+    number = \chinese{subsubsection},
+    format = \heiti,
+    afterskip = 0pt,
+    beforeskip = 0pt,
   }
 }
+\setcounter{secnumdepth}{5}
 
 \usepackage{varwidth}
 \newcommand{\chaptertitleformat}[1]{%%
@@ -203,6 +212,8 @@
 \input{ZhanGuo/ZhanGuo}
 \input{Qin/00_Qin}
 \input{XiHan/00_XiHan}
+\input{DongHan/00_DongHan}
+\input{SanGuo/00_SanGuo}
 
 \end{document}
 
