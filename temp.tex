@@ -1,49 +1,66 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2018-07-08 21:32:09>
+%% Time-stamp: <Chen Wang: 2018-07-13 00:52:01>
 
-    \documentclass{article}
-    \usepackage[paperwidth=70mm,paperheight=100mm,margin=1mm]{geometry}
-    
-    
-    \usepackage{booktabs}
-    \usepackage{array}
-    \usepackage{longtable}
-    
-    \usepackage{pifont}
-    \makeatletter
-    \newcommand*{\circnum}[1]{%
-      \expandafter\@circnum\csname c@#1\endcsname
-    }
-    \newcommand*{\@circnum}[1]{%
-      \ifnum#1<1 %
-      \@ctrerr
-      \else
-      \ifnum#1>20 %
-      \@ctrerr
-      \else
-      \ding{\numexpr 181+(#1)\relax}%
-      \fi
-      \fi
-    }
-    \makeatother
-    
-    \renewcommand*{\thefootnote}{\circnum{footnote}}
-    
-    \begin{document}
-    \begin{longtable}{|>{\centering}m{2em}|>{\centering}m{2em}|>{\centering}m{8.3em}|}
-      % \caption{秦王政}\\
-      \toprule
-      A & B & C \tabularnewline
-      \midrule
-      A & B & \begin{enumerate}
-        \tiny
-      \item ASD\footnote{first}
-      \item ASD\footnote{second}
-      \end{enumerate} \tabularnewline
-      \bottomrule
-    \end{longtable}
-    
-    \end{document}
+\documentclass{article}
+\usepackage[paperwidth=70mm,paperheight=100mm,margin=1mm]{geometry}
+
+
+\usepackage{pifont}
+\makeatletter
+\newcommand*{\circnum}[1]{%
+  \expandafter\@circnum\csname c@#1\endcsname
+}
+\newcommand*{\@circnum}[1]{%
+  \ifnum#1<1 %
+  \@ctrerr
+  \else
+  \ifnum#1>20 %
+  \@ctrerr
+  \else
+  \ding{\numexpr 181+(#1)\relax}%
+  \fi
+  \fi
+}
+\makeatother
+
+\renewcommand*{\thefootnote}{\circnum{footnote}}
+
+\usepackage{enotez}
+% \renewcommand*{\theendnote}{\circnum{endnote}}
+
+\makeatletter
+\@newctr{endnote}[section]
+\makeatother
+
+\begin{document}
+
+\section{First}
+
+This is a footnote\footnote{First footnote.}.
+
+This is a endnote\endnote{End note 1.}
+
+\begingroup
+\parindent 0pt
+\parskip 2ex
+\def\enotesize{\normalsize}
+\printendnotes
+\endgroup
+
+\section{Second}
+
+This is a footnote\footnote{Second footnote.}.
+
+This is a endnote\endnote{End note 2.}
+
+\begingroup
+\parindent 0pt
+\parskip 2ex
+\def\enotesize{\normalsize}
+\printendnotes
+\endgroup
+
+\end{document}
 
 %%% Local Variables:
 %%% mode: latex
