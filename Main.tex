@@ -1,7 +1,7 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2018-07-16 21:55:26>
+%% Time-stamp: <Chen Wang: 2018-07-18 09:06:00>
 
-\documentclass[zihao=-4]{ctexbook}
+\documentclass[zihao=-4,AutoFakeBold=true]{ctexbook}
 \ctexset{
   chapter = {
     name = {第,卷},
@@ -131,7 +131,19 @@
 
 \usepackage{enumitem}
 % \setlength{\parindent}{0pt}
-\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+\setlist[description]{
+  leftmargin=0pt,
+  labelindent=0pt,
+  labelsep=3pt,
+  nosep,
+  itemsep=0pt,
+  parsep=0pt,
+  topsep=0pt,
+  partopsep=0pt,
+  before=\vspace{-1.6em},
+  after=\vspace{-1.8em},
+  font=\SimHei,
+}
 \setlist[enumerate]{
   nosep,
   itemsep=0pt,
@@ -156,6 +168,7 @@
   }
 
 \usepackage{longtable}
+\usepackage{graphicx}
 
 %% 改变页数字体大小
 \renewcommand*{\thepage}{\scriptsize\arabic{page}}
@@ -163,6 +176,8 @@
 %% 改变字体大小
 \renewcommand{\footnotesize}{\fontsize{5pt}{6pt}\selectfont}
 \newcommand{\threept}{\fontsize{3pt}{3pt}\selectfont}
+\newcommand{\namefont}{\fontsize{8pt}{10pt}\selectfont}
+\newcommand{\xzfont}{\fontsize{5pt}{6pt}\selectfont}
 
 %% 使每页的脚注的数字为黑色圆圈数字
 \usepackage{pifont}
@@ -251,6 +266,7 @@
 % \input{Yuan/00_Yuan} % 元
 % \input{Ming/00_Ming} % 明
 % \input{Qing/00_Qing} % 清
+\input{FuLu/00_FuLu} % 附录
 
 \end{document}
 
