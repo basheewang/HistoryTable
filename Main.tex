@@ -1,5 +1,5 @@
 %% -*- coding: utf-8 -*-
-%% Time-stamp: <Chen Wang: 2019-10-22 11:35:00>
+%% Time-stamp: <Chen Wang: 2019-12-26 22:25:08>
 
 \documentclass[zihao=-4,AutoFakeBold=true]{ctexbook}
 \ctexset{
@@ -20,7 +20,7 @@
   subsection = {
     name = {第,节},
     number = \chinese{subsection},
-    format = \heiti,
+    format = \color{red}\heiti,
     afterskip = 0pt,
     beforeskip = 0pt,
   },
@@ -28,12 +28,13 @@
     % name = {第,},
     % numbering = true,
     number = \chinese{subsubsection},
-    format = \heiti,
+    format = \color{blue}\heiti,
     afterskip = 0pt,
     beforeskip = 0pt,
   }
 }
 \setcounter{secnumdepth}{5}
+% \setcounter{tocdepth}{3}
 
 \usepackage{varwidth}
 \newcommand{\chaptertitleformat}[1]{%%
@@ -59,9 +60,11 @@
 \usepackage{color}
 \usepackage[perpage,hang,flushmargin]{footmisc}
 
+\usepackage{xpinyin}
+
 % \usepackage{enotez}
 
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks,bookmarksdepth=4]{hyperref}
 \hypersetup{
   colorlinks=true,
   linkcolor=blue,
@@ -258,11 +261,11 @@
 
 \input{000_QianYan/QianYan} % 前言
 
-% \input{01_ChunQiu/00_ChunQiu} % 春秋
+\input{01_ChunQiu/00_ChunQiu} % 春秋
 % \input{02_ZhanGuo/00_ZhanGuo} % 战国
 % \input{03_Qin/00_Qin} % 秦
 % \input{04_XiHan/00_XiHan} % 西汉
-\input{05_DongHan/00_DongHan} % 东汉
+% \input{05_DongHan/00_DongHan} % 东汉
 % \input{06_SanGuo/00_SanGuo} % 三国
 % \input{07_XiJin/00_XiJin} % 西晋
 % \input{08_DongJin/00_DongJin} % 东晋
